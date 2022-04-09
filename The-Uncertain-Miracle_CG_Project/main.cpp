@@ -22,15 +22,6 @@ void init(void)
 }
 
 
-///============================================================================================================///
-
-///=================///
-///*** All_Model ***///
-///=================///
-
-
-
-///*** Circle_Model***///
 void circle(GLdouble rad)
 {
     GLint points = 50;
@@ -46,7 +37,7 @@ void circle(GLdouble rad)
     }
     glEnd();
 }
-/// *** Sun_Model **///
+
 void Sun_Model(){
     glPushMatrix();
     glTranslatef(500,0,0);
@@ -61,26 +52,23 @@ void Moving_Sun_Model(){
     glPopMatrix();
 
 }
-///*** Cloud_Model***///
+
 void cloud_model_one(){
 
     glColor3f(1.25, 0.924, 0.930);
-
-    ///Top_Left
 
     glPushMatrix();
     glTranslatef(320,210,0);
     circle(15);
     glPopMatrix();
 
-    ///Top
 
     glPushMatrix();
     glTranslatef(340, 225, 0);
     circle(16);
     glPopMatrix();
 
-    ///Right
+
 
     glPushMatrix();
     glTranslatef(360,210,0);
@@ -88,7 +76,7 @@ void cloud_model_one(){
     glPopMatrix();
 
 
-    ///middle_Fill
+
     glPushMatrix();
     glTranslatef(355,210,0);
     circle(16);
@@ -144,7 +132,7 @@ void cloud_model_one(){
     circle(10);
     glPopMatrix();
 
-    ///****Fill End****
+
 
 }
 
@@ -235,10 +223,7 @@ void cloud_model_Three(){
 
 
 
-    ///****Fill End****
-
 }
-///*** Hill_Model***///
 void hill_big(){
 
     ///Hill
@@ -287,7 +272,6 @@ void hill_small(){
 
 	glEnd();
 }
-///*** Tilla_Model ***///
 void Tilla_One_Model(){
     ///Tilla
 	glBegin(GL_POLYGON);
@@ -369,7 +353,7 @@ void Tilla_Two_Model(){
 
 
 }
-///*** House_Model ***///
+
 void house(){
     ///House_Roof
 	glBegin(GL_POLYGON);
@@ -483,7 +467,7 @@ void house(){
 
 
 }
-///*** Field_Model ***///
+
 void field(){
     ///Field
 	glBegin(GL_POLYGON);
@@ -508,7 +492,7 @@ void field(){
 
 
 }
-///*** Tree_Model ***///
+
 void Tree_Model_One(){
 
 
@@ -585,7 +569,6 @@ void Tree_Model_Three(){
     glEnd();
 }
 
-/// *** Windmill_Stand_Model ***///
 void Windmill_Stand_Model(){
 
     glColor3f(0.38, 0.41, 0.36);
@@ -596,8 +579,8 @@ void Windmill_Stand_Model(){
     glVertex2i(390, 100);
     glEnd();
 }
+/*
 
-///*** Windmill_Blades_Model ***///
 
 void Windmill_Blade(){
 
@@ -635,7 +618,7 @@ void Windmill_Blade(){
     glPopMatrix();
 
 }
-///*** Windmill_Final_Model ***///
+*/
 void Windmill(){
 
 
@@ -657,7 +640,7 @@ void Windmill(){
     glColor3f(0.11, 0.23, 0.36);
     glPushMatrix();
     glTranslatef(380,251,0);
-    Windmill_Blade();
+    //Windmill_Blade();
     glPopMatrix();
 
 
@@ -665,23 +648,14 @@ void Windmill(){
 
 }
 
-
-///Model_End
-///=======================================================================================================///
-
-
-///=================///
-///***   Object  ***///
-///=================///
-
-///*** Sun ***///
+/*
 void Sun(){
     glColor3f(1, 1, 0);
     glPushMatrix();
     Moving_Sun_Model();
     glPopMatrix();
 }
-///*** Cloud_One_Model_One ***///
+
 void cloud_one(){
     glPushMatrix();
     glTranslatef(cx,-40,0);
@@ -690,7 +664,7 @@ void cloud_one(){
 
 }
 
-///*** Cloud_Two_Model_one ***///
+
 
 void cloud_two(){
     glPushMatrix();
@@ -700,7 +674,6 @@ void cloud_two(){
 
 }
 
-///*** Cloud_Three_Model_Two ***///
 
 void cloud_three(){
     glPushMatrix();
@@ -709,7 +682,7 @@ void cloud_three(){
     glPopMatrix();
 
 }
-///*** Cloud_Four_Model_Two ***///
+
 
 void cloud_four(){
     glPushMatrix();
@@ -718,7 +691,7 @@ void cloud_four(){
     glPopMatrix();
 
 }
-///*** Cloud_Five_Model_Three ***///
+
 void cloud_five(){
 
     glPushMatrix();
@@ -726,7 +699,7 @@ void cloud_five(){
     cloud_model_Three();
     glPopMatrix();
 }
-///*** Cloud_Six_Model_Three ***///
+
 void cloud_six(){
 
     glPushMatrix();
@@ -735,42 +708,43 @@ void cloud_six(){
     glPopMatrix();
 }
 
-///*** House_One ***///
+
 void house_one(){
     glPushMatrix();
     glTranslatef(0,0,0);
     house();
     glPopMatrix();
 }
-///*** House_Two ***///
+
 void house_two(){
     glPushMatrix();
     glTranslatef(450,0,0);
     house();
     glPopMatrix();
 }
-///*** House_Two ***///
+
 void house_three(){
     glPushMatrix();
     glTranslatef(320, 37,0);
     house();
     glPopMatrix();
 }
-///*** Hill_big_One ***///
+*/
+
 void Hill_Big_One(){
     glPushMatrix();
     glTranslatef(0,0,0);
     hill_big();
     glPopMatrix();
 }
-///*** Hill_big_Two ***///
+
 void Hill_Big_Two(){
     glPushMatrix();
     glTranslatef(550,-20,0);
     hill_big();
     glPopMatrix();
 }
-///*** Hill_Small_One ***///
+
 void Hill_Small_One(){
     glPushMatrix();
     glTranslatef(0,0,0);
@@ -778,7 +752,7 @@ void Hill_Small_One(){
     glPopMatrix();
 
 }
-/// *** Tilla_One_Model_One ***///
+
 
 void Tilla_One(){
 
@@ -788,7 +762,7 @@ void Tilla_One(){
     glPopMatrix();
 
 }
-/// *** Tilla_Two_Model_Two ***///
+
 void Tilla_Two(){
 
     glPushMatrix();
@@ -798,7 +772,7 @@ void Tilla_Two(){
 
 
 }
-/// *** Tilla_Three_Model_Two ***///
+
 void Tilla_Three(){
 
     glPushMatrix();
@@ -808,7 +782,7 @@ void Tilla_Three(){
 
 
 }
-/// *** Tilla_Four_Model_One ***///
+
 void Tilla_Four(){
 
     glColor3f(0.833, 1., 0.0);
@@ -819,7 +793,7 @@ void Tilla_Four(){
 
 
 }
-///*** Tree_1 ***///
+
 void Tree_One(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -828,7 +802,7 @@ void Tree_One(){
     glPopMatrix();
 }
 
-///*** Tree_2 ***///
+
 void Tree_Two(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -837,7 +811,6 @@ void Tree_Two(){
     glPopMatrix();
 }
 
-///*** Tree_3 ***///
 void Tree_Three(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -845,7 +818,7 @@ void Tree_Three(){
     Tree_Model_One();
     glPopMatrix();
 }
-///*** Tree_4 ***///
+
 void Tree_Four(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -854,7 +827,7 @@ void Tree_Four(){
     glPopMatrix();
 }
 
-///*** Tree_5 ***///
+
 void Tree_Five(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -863,7 +836,7 @@ void Tree_Five(){
     glPopMatrix();
 }
 
-///*** Tree_6 ***///
+
 void Tree_Six(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -871,7 +844,6 @@ void Tree_Six(){
     Tree_Model_Two();
     glPopMatrix();
 }
-///*** Tree_7 ***///
 void Tree_Seven(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -880,7 +852,7 @@ void Tree_Seven(){
     glPopMatrix();
 }
 
-///*** Tree_8 ***///
+
 void Tree_Eight(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -889,7 +861,7 @@ void Tree_Eight(){
     glPopMatrix();
 }
 
-///*** Tree_9 ***///
+
 void Tree_Nine(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -898,7 +870,7 @@ void Tree_Nine(){
     glPopMatrix();
 }
 
-///*** Tree_10 ***///
+
 void Tree_Ten(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -907,7 +879,7 @@ void Tree_Ten(){
     glPopMatrix();
 }
 
-///*** Tree_11 ***///
+
 void Tree_Eleven(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -916,7 +888,6 @@ void Tree_Eleven(){
     glPopMatrix();
 }
 
-///*** Tree_12 ***///
 void Tree_Twelve(){
     glColor3f(0.533, 1.293, 0.0);
     glPushMatrix();
@@ -925,7 +896,7 @@ void Tree_Twelve(){
     glPopMatrix();
 }
 
-/// *** Windmill ***///
+
 void Windmill_One(){
     glColor3f(0.11, 0.23, 0.36);
     glPushMatrix();
@@ -951,34 +922,26 @@ void Windmill_Three(){
     glPopMatrix();
 
 }
-///Object_End
-///=========================================================================================================///
-
-
-///========================///
-///*** Display Function ***///
-///========================///
 
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0, 0.0, 1.0);
 
-    ///*** Object_Layer ***///
-    Sun();
+//    Sun();
 
     Windmill_Three();
 
     Hill_Big_One();
     Tilla_Four();
 
-    house_three();
+//    house_three();
 
     Hill_Big_Two();
     Hill_Small_One();
 
-    cloud_three();
-    cloud_four();
+//    cloud_three();
+  //  cloud_four();
 
     Windmill_One();
     Windmill_Two();
@@ -989,9 +952,9 @@ void display(void)
     Tilla_Three();
 
 
-    house_one();
-    cloud_one();
-    house_two();
+//    house_one();
+  //  cloud_one();
+    //house_two();
 
 
     Tree_One();
@@ -1009,17 +972,14 @@ void display(void)
 
 
 
-    cloud_two();
-    cloud_five();
-    cloud_six();
+//    cloud_two();
+  //  cloud_five();
+    //cloud_six();
     field();
 
 	glFlush();
 }
-///========================///
-///*** Speed & Movement ***///
-///========================///
-///*** Sun_Move ***///
+
 void sun_move(){
 
     sun_spin = sun_spin + 0.0008;
@@ -1084,7 +1044,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(1900, 1900);
-	glutCreateWindow("Smart Village");
+	glutCreateWindow("The uncertain miracle");
 	init();
 	glutDisplayFunc(display);
     glutMouseFunc(mouse);
