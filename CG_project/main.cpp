@@ -6,18 +6,11 @@
 #include<stdio.h>
 #define PI 3.1416
 
-///==================================================///
-///         Author@Shamim Hasan                       ///
-///         Id: 151-15-4965                          ///
-///         BSc In CSE                               ///
-///         Daffodil International University        ///
-///==================================================///
-
 GLint i, j, k;
-GLfloat sun_spin=0, sun_x=0, sun_y=0;
+GLfloat ufo_spin=0, ufo_x=900, ufo_y=900;
 GLfloat ax=0,bx=0,cx=0,dx=0,str=500.0,mn=500.0;
 GLfloat sr=0.0,sg=0.749,sb=1.0;
-GLfloat spin = 0.0;
+GLfloat spin = 2.0;
 
 void init(void)
 {
@@ -27,11 +20,6 @@ void init(void)
 }
 
 
-///============================================================================================================///
-
-///=================///
-///*** All_Model ***///
-///=================///
 
 
 
@@ -51,18 +39,18 @@ void circle(GLdouble rad)
     }
     glEnd();
 }
-/// *** Sun_Model **///
-void Sun_Model(){
+/// *** ufo_Model **///
+void ufo_Model(){
     glPushMatrix();
-    glTranslatef(500,0,0);
+    glTranslatef(0,600,0);
     circle(30);
     glPopMatrix();
 
 }
-void Moving_Sun_Model(){
+void Moving_ufo_Model(){
     glPushMatrix();
-    glRotatef(-sun_spin, 0,0,-.009);
-    Sun_Model();
+    glRotatef(ufo_spin, 0,0,.009);
+    ufo_Model();
     glPopMatrix();
 
 }
@@ -680,10 +668,10 @@ void Windmill(){
 ///=================///
 
 ///*** Sun ***///
-void Sun(){
+void ufo(){
     glColor3f(1, 1, 0);
     glPushMatrix();
-    Moving_Sun_Model();
+    Moving_ufo_Model();
     glPopMatrix();
 }
 ///*** Cloud_One_Model_One ***///
@@ -970,7 +958,7 @@ void display(void)
 	glColor3f(0.0, 0.0, 1.0);
 
     ///*** Object_Layer ***///
-    Sun();
+    ufo();
 
     Windmill_Three();
 
@@ -1025,14 +1013,14 @@ void display(void)
 ///*** Speed & Movement ***///
 ///========================///
 ///*** Sun_Move ***///
-void sun_move(){
+void ufo_move(){
 
-    sun_spin = sun_spin + 0.0008;
+    ufo_spin = ufo_spin - 0.0008;
 
 }
 void move_right(){
 
-    sun_move();
+    ufo_move();
 
     spin = spin +.1;
     ax = ax + .05;
@@ -1089,7 +1077,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(1900, 1900);
-	glutCreateWindow("Smart Village");
+	glutCreateWindow("The uncertain miracle");
 	init();
 	glutDisplayFunc(display);
     glutMouseFunc(mouse);
