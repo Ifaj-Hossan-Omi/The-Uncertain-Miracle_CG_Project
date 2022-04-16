@@ -502,6 +502,9 @@ void field(){
 	glEnd();
 
 
+
+
+
 	glLineWidth(4);
 	glBegin(GL_LINES); ///boundary legs
 	glColor3f(1.0f, 0.1f, 1.0f);
@@ -627,6 +630,9 @@ void field(){
 
 
     glEnd();
+
+
+
 
 }
 ///*** Tree_Model ***///
@@ -881,6 +887,38 @@ void house_three(){
     house();
     glPopMatrix();
 }
+
+void house_four(){
+    glPushMatrix();
+    glTranslatef(-300, -150,0);
+    house();
+    glPopMatrix();
+}
+void house_five(){
+    glPushMatrix();
+    glTranslatef(-250, -50,0);
+    house();
+    glPopMatrix();
+}
+void house_eight(){
+    glPushMatrix();
+    glTranslatef(-380, -10,0);
+    house();
+    glPopMatrix();
+}
+void house_six(){
+    glPushMatrix();
+    glTranslatef(400, -70,0);
+    house();
+    glPopMatrix();
+}
+void house_seven(){
+    glPushMatrix();
+    glTranslatef(400, -160,0);
+    house();
+    glPopMatrix();
+}
+
 ///*** Hill_big_One ***///
 void Hill_Big_One(){
     glPushMatrix();
@@ -1138,7 +1176,11 @@ void display(void)
     cloud_five();
    // cloud_six();
     field();
-
+    house_four();
+    house_five();
+    house_six();
+    house_seven();
+    house_eight();
 	glFlush();
 }
 ///========================///
