@@ -6,18 +6,11 @@
 #include<stdio.h>
 #define PI 3.1416
 
-///==================================================///
-///         Author@Shamim Hasan                       ///
-///         Id: 151-15-4965                          ///
-///         BSc In CSE                               ///
-///         Daffodil International University        ///
-///==================================================///
-
 GLint i, j, k;
-GLfloat sun_spin=0, sun_x=0, sun_y=0;
+GLfloat ufo_spin=0, ufo_x=900, ufo_y=900;
 GLfloat ax=0,bx=0,cx=0,dx=0,str=500.0,mn=500.0;
 GLfloat sr=0.0,sg=0.749,sb=1.0;
-GLfloat spin = 0.0;
+GLfloat spin = 2.0;
 
 void init(void)
 {
@@ -27,15 +20,6 @@ void init(void)
 }
 
 
-///============================================================================================================///
-
-///=================///
-///*** All_Model ***///
-///=================///
-
-
-
-///*** Circle_Model***///
 void circle(GLdouble rad)
 {
     GLint points = 50;
@@ -51,18 +35,18 @@ void circle(GLdouble rad)
     }
     glEnd();
 }
-/// *** Sun_Model **///
-void Sun_Model(){
+/// *** ufo_Model **///
+void ufo_Model(){
     glPushMatrix();
-    glTranslatef(500,0,0);
+    glTranslatef(0,600,0);
     circle(30);
     glPopMatrix();
 
 }
-void Moving_Sun_Model(){
+void Moving_ufo_Model(){
     glPushMatrix();
-    glRotatef(-sun_spin, 0,0,-.009);
-    Sun_Model();
+    glRotatef(ufo_spin, 0,0,.009);
+    ufo_Model();
     glPopMatrix();
 
 }
@@ -243,15 +227,19 @@ void cloud_model_Three(){
     ///****Fill End****
 
 }
-///*** Hill_Model***///
+
+
+
+
+
 void hill_big(){
 
     ///Hill
 	glBegin(GL_POLYGON);
     glColor3f(0.38, 0.41, 0.36);
-	glVertex2i(70, 70);
-	glVertex2i(200, 225);
-	glVertex2i(330, 70);
+	glVertex2i(200, 200);
+	glVertex2i(330, 355);
+	glVertex2i(460, 200);
 
 	glEnd();
 
@@ -259,35 +247,36 @@ void hill_big(){
     glBegin(GL_POLYGON);
     glColor3f(1.25, 0.924, 0.930);
 
-	glVertex2i(200, 225);
-	glVertex2i(230, 190);
-	glVertex2i(220, 180);
-	glVertex2i(200, 190);
-	glVertex2i(190, 180);
-	glVertex2i(170, 190);
+	glVertex2i(330, 355);
+	glVertex2i(360, 320);
+	glVertex2i(350, 310);
+	glVertex2i(330, 320);
+	glVertex2i(320, 310);
+	glVertex2i(300, 320);
 
 	glEnd();
 
 }
+
 void hill_small(){
     ///Hill_Small
 	glBegin(GL_POLYGON);
     glColor3f(0.11, 0.23, 0.36);
-	glVertex2i(250, 100);
-	glVertex2i(310, 175);
-	glVertex2i(370, 100);
+	glVertex2i(380, 230);
+	glVertex2i(440, 305);
+	glVertex2i(500, 230);
 
 	glEnd();
 
     ///Hill_Small_Snow
 	glBegin(GL_POLYGON);
     glColor3f(1.25, 0.924, 0.930);
-    glVertex2i(290, 150);
-	glVertex2i(310, 175);
-	glVertex2i(330, 150);
-	glVertex2i(325, 140);
-	glVertex2i(310, 150);
-	glVertex2i(300, 140);
+    glVertex2i(420,280);
+	glVertex2i(440,305);
+	glVertex2i(460,280);
+	glVertex2i(455,270);
+	glVertex2i(440,280);
+	glVertex2i(430,270);
 
 
 	glEnd();
@@ -297,15 +286,15 @@ void Tilla_One_Model(){
     ///Tilla
 	glBegin(GL_POLYGON);
 	glColor3f(0.1, 1.293, 0.0);
-	glVertex2i(125, 70);
-	glVertex2i(150, 80);
-	glVertex2i(160, 90);
-	glVertex2i(170, 90);
-	glVertex2i(180, 100);
-	glVertex2i(190, 105);
-	glVertex2i(200, 108);
-	glVertex2i(300, 110);
-	glVertex2i(300, 70);
+	glVertex2i(255, 200);
+	glVertex2i(280, 210);
+	glVertex2i(290, 220);
+	glVertex2i(300, 220);
+	glVertex2i(310, 230);
+	glVertex2i(320, 235);
+	glVertex2i(330, 238);
+	glVertex2i(430, 240);
+	glVertex2i(430, 200);
 
 	glEnd();
 
@@ -379,138 +368,265 @@ void house(){
     ///House_Roof
 	glBegin(GL_POLYGON);
     glColor3f(.990, 0.0, 0.0);
-	glVertex2i(285, 105);
-	glVertex2i(285, 130);
-	glVertex2i(380, 115);
-	glVertex2i(380, 105);
+	glVertex2i(410, 235);
+	glVertex2i(415, 260);
+	glVertex2i(510, 245);
+	glVertex2i(510, 235);
 
 	glEnd();
 
     ///House_Roof_Shadow
 	glBegin(GL_POLYGON);
     glColor3f(.890, 0.0, 0.0);
-	glVertex2i(285, 105);
-	glVertex2i(285, 120);
-	glVertex2i(380, 105);
-	glVertex2i(380, 105);
+	glVertex2i(415, 235);
+	glVertex2i(415, 250);
+	glVertex2i(510, 235);
+	glVertex2i(510, 235);
 
 	glEnd();
 
     ///House_Fence
 	glBegin(GL_POLYGON);
     glColor3f(.555, 1.0, 1.0);
-	glVertex2i(290, 70);
-	glVertex2i(290, 104);
-	glVertex2i(375, 104);
-	glVertex2i(375, 70);
+	glVertex2i(420, 200);
+	glVertex2i(420, 234);
+	glVertex2i(505, 234);
+	glVertex2i(505, 200);
 
 	glEnd();
 
     ///House_Fence_Shadow
 	glBegin(GL_POLYGON);
     glColor3f(.555, 0.924, 0.930);
-	glVertex2i(310, 70);
-	glVertex2i(350, 104);
-	glVertex2i(375, 104);
-	glVertex2i(375, 70);
+	glVertex2i(440, 200);
+	glVertex2i(480, 234);
+	glVertex2i(505, 234);
+	glVertex2i(505, 200);
 
 	glEnd();
 
     ///House_Door
 	glBegin(GL_POLYGON);
     glColor3f(0.38, 0.41, 0.36);
-	glVertex2i(330, 70);
-	glVertex2i(330, 100);
-	glVertex2i(350, 100);
-	glVertex2i(350, 70);
+	glVertex2i(460, 200);
+	glVertex2i(460, 230);
+	glVertex2i(480, 230);
+	glVertex2i(480, 200);
 
 	glEnd();
 
     ///House_Window1
 	glBegin(GL_POLYGON);
     glColor3f(0.38, 0.21, 0.26);
-	glVertex2i(295, 75);
-	glVertex2i(295, 90);
-	glVertex2i(310, 90);
-	glVertex2i(310, 75);
+	glVertex2i(425, 205);
+	glVertex2i(425, 220);
+	glVertex2i(440, 220);
+	glVertex2i(440, 205);
 
 	glEnd();
 
     ///House_Window2
 	glBegin(GL_POLYGON);
     glColor3f(0.38, 0.21, 0.26);
-	glVertex2i(312, 75);
-	glVertex2i(312, 90);
-	glVertex2i(327, 90);
-	glVertex2i(327, 75);
+	glVertex2i(442, 205);
+	glVertex2i(442, 220);
+	glVertex2i(457, 220);
+	glVertex2i(457, 205);
 
 	glEnd();
 
     ///House_Window3
 	glBegin(GL_POLYGON);
     glColor3f(0.38, 0.21, 0.26);
-	glVertex2i(355, 75);
-	glVertex2i(355, 90);
-	glVertex2i(370, 90);
-	glVertex2i(370, 75);
+	glVertex2i(485, 205);
+	glVertex2i(485, 220);
+	glVertex2i(500, 220);
+	glVertex2i(500, 205);
 
 	glEnd();
 
     ///House_Small_Roof
 	glBegin(GL_POLYGON);
     glColor3f(1.0, 0.0, 0.0);
-	glVertex2i(250, 90);
-	glVertex2i(257, 104);
-	glVertex2i(290, 104);
-	glVertex2i(290, 90);
+	glVertex2i(380, 220);
+	glVertex2i(387, 234);
+	glVertex2i(420, 234);
+	glVertex2i(420, 220);
 
 	glEnd();
 
     ///House_Small_Fence
 	glBegin(GL_POLYGON);
     glColor3f(.555, .724, .930);
-	glVertex2i(255, 70);
-	glVertex2i(255, 90);
-	glVertex2i(290, 90);
-	glVertex2i(290, 70);
+	glVertex2i(385, 200);
+	glVertex2i(385, 220);
+	glVertex2i(420, 220);
+	glVertex2i(420, 200);
 
 	glEnd();
 
     ///House_Small_Door
 	glBegin(GL_POLYGON);
     glColor3f(0.11, 0.23, 0.36);
-	glVertex2i(260, 70);
-	glVertex2i(260, 80);
-	glVertex2i(285, 80);
-	glVertex2i(285, 70);
+	glVertex2i(390, 200);
+	glVertex2i(390, 210);
+	glVertex2i(415, 210);
+	glVertex2i(415, 200);
 
 	glEnd();
 
 
 }
 ///*** Field_Model ***///
+
 void field(){
     ///Field
 	glBegin(GL_POLYGON);
     glColor3f(0.533, 1.293, 0.0);
-	glVertex2i(0, 50);
-	glVertex2i(0, 70);
-	glVertex2i(1000, 70);
-	glVertex2i(1000, 50);
+	glVertex2i(0, 200);
+	glVertex2i(0, 170);
+	glVertex2i(1000, 170);
+	glVertex2i(1000, 200);
 
 	glEnd();
 
 
     ///Field_Shadow
 	glBegin(GL_POLYGON);
-	glColor3f(0.1, 1.293, 0.0);
+	glColor3f(1.1, 1.5, 0.0);
 	glVertex2i(0, 0);
-	glVertex2i(0, 50);
-	glVertex2i(1000, 50);
+	glVertex2i(0, 170);
+	glVertex2i(1000, 170);
 	glVertex2i(1000, 0);
 
 	glEnd();
 
+
+	glLineWidth(4);
+	glBegin(GL_LINES); ///boundary legs
+	glColor3f(1.0f, 0.1f, 1.0f);
+
+    //glVertex2f(300.0f, 10.5f);
+    //glVertex2f(300.0f, 30.0f);
+
+    ///bottom part
+
+	glVertex2f(330.0f, 10.0f);
+	glVertex2f(330.0f, 30.0f);
+
+	glVertex2f(360.0f, 10.0f);
+	glVertex2f(360.0f, 30.0f);
+
+	glVertex2f(390.0f,10.0f);
+	glVertex2f(390.0f,30.0f);
+
+	glVertex2f(420.0f,10.0f);
+	glVertex2f(420.0f,30.0f);
+
+	glVertex2f(450.0f,10.0f);
+	glVertex2f(450.0f,30.0f);
+
+	glVertex2f(480.0f,10.0f);
+	glVertex2f(480.0f,30.0f);
+
+	glVertex2f(510.0f,10.0f);
+	glVertex2f(510.0f,30.0f);
+
+	glVertex2f(540.0f,10.0f);
+	glVertex2f(540.0f,30.0f);
+
+	glVertex2f(570.0f,10.0f);
+	glVertex2f(570.0f,30.0f);
+
+	glVertex2f(600.0f,10.0f);
+	glVertex2f(600.0f,30.0f);
+
+	glVertex2f(630.0f,10.0f);
+	glVertex2f(630.0f,30.0f);
+
+	///top part
+
+	glVertex2f(330.0f, 160.0f);
+	glVertex2f(330.0f, 180.0f);
+
+	glVertex2f(360.0f, 160.0f);
+	glVertex2f(360.0f, 180.0f);
+
+	glVertex2f(390.0f,160.0f);
+	glVertex2f(390.0f,180.0f);
+
+	glVertex2f(420.0f,160.0f);
+	glVertex2f(420.0f,180.0f);
+
+	glVertex2f(450.0f,160.0f);
+	glVertex2f(450.0f,180.0f);
+
+	glVertex2f(480.0f,160.0f);
+	glVertex2f(480.0f,180.0f);
+
+	glVertex2f(510.0f,160.0f);
+	glVertex2f(510.0f,180.0f);
+
+	glVertex2f(540.0f,160.0f);
+	glVertex2f(540.0f,180.0f);
+
+	glVertex2f(570.0f,160.0f);
+	glVertex2f(570.0f,180.0f);
+
+	glVertex2f(600.0f,160.0f);
+	glVertex2f(600.0f,180.0f);
+
+	glVertex2f(630.0f,160.0f);
+	glVertex2f(630.0f,180.0f);
+
+	///right part
+
+	glVertex2f(650.0f,150.0f);
+	glVertex2f(650.0f,170.0f);
+
+	glVertex2f(670.0f,135.0f);
+	glVertex2f(670.0f,155.0f);
+
+	glVertex2f(690.0f,120.0f);
+	glVertex2f(690.0f,140.0f);
+
+	glVertex2f(650.0f,25.0f);
+	glVertex2f(650.0f,45.0f);
+
+	glVertex2f(670.0f,40.0f);
+	glVertex2f(670.0f,60.0f);
+
+	glVertex2f(690.0f,55.0f);
+	glVertex2f(690.0f,75.0f);
+
+	glVertex2f(700.0f,90.0f);
+	glVertex2f(700.0f,110.0f);
+
+	///left part
+
+	glVertex2f(310.0f,150.0f);
+	glVertex2f(310.0f,170.0f);
+
+	glVertex2f(290.0f,135.0f);
+	glVertex2f(290.0f,155.0f);
+
+	glVertex2f(270.0f,120.0f);
+	glVertex2f(270.0f,140.0f);
+
+	glVertex2f(310.0f,25.0f);
+	glVertex2f(310.0f,45.0f);
+
+	glVertex2f(290.0f,40.0f);
+	glVertex2f(290.0f,60.0f);
+
+	glVertex2f(270.0f,55.0f);
+	glVertex2f(270.0f,75.0f);
+
+	glVertex2f(260.0f,90.0f);
+	glVertex2f(260.0f,110.0f);
+
+
+    glEnd();
 
 }
 ///*** Tree_Model ***///
@@ -561,10 +677,10 @@ void Tree_Model_Two(){
 
     glBegin(GL_POLYGON);
     glColor3f(0.38, 0.21, 0.26);
-	glVertex2f(129, 110);
-	glVertex2f(129, 124);
-	glVertex2f(131, 124);
-	glVertex2f(131, 110);
+	glVertex2f(259, 140);
+	glVertex2f(259, 254);
+	glVertex2f(261, 254);
+	glVertex2f(261, 240);
 
     glEnd();
 }
@@ -574,18 +690,18 @@ void Tree_Model_Three(){
 
     glBegin(GL_POLYGON);
 
-	glVertex2f(125, 123);
-	glVertex2f(133, 145);
-	glVertex2f(141, 123);
+	glVertex2f(255, 253);
+	glVertex2f(263, 275);
+	glVertex2f(271, 253);
 
 	glEnd();
 
     glBegin(GL_POLYGON);
     glColor3f(0.38, 0.21, 0.26);
-	glVertex2f(132, 110);
-	glVertex2f(132, 124);
-	glVertex2f(134, 124);
-	glVertex2f(134, 110);
+	glVertex2f(262, 240);
+	glVertex2f(262, 254);
+	glVertex2f(264, 254);
+	glVertex2f(264, 240);
 
     glEnd();
 }
@@ -595,10 +711,10 @@ void Windmill_Stand_Model(){
 
     glColor3f(0.38, 0.41, 0.36);
     glBegin(GL_POLYGON);
-    glVertex2i(375, 100);
-    glVertex2i(380, 240);
-    glVertex2i(384, 240);
-    glVertex2i(390, 100);
+    glVertex2i(510, 210);
+    glVertex2i(520, 370);
+    glVertex2i(525, 370);
+    glVertex2i(530, 210);
     glEnd();
 }
 
@@ -606,7 +722,7 @@ void Windmill_Stand_Model(){
 
 void Windmill_Blade(){
 
-    ///Blade_One
+     ///Blade_One
     glPushMatrix();
     glRotatef(spin,0,0,90);
     glBegin(GL_POLYGON);
@@ -654,14 +770,14 @@ void Windmill(){
     ///Windmill_Motor
     glColor3f(0.11, 0.23, 0.36);
     glPushMatrix();
-    glTranslatef(380,250,0);
+    glTranslatef(520,370,0);
     circle(10);
     glPopMatrix();
 
     ///Windmill_Rotary_Blades
     glColor3f(0.11, 0.23, 0.36);
     glPushMatrix();
-    glTranslatef(380,251,0);
+    glTranslatef(520,370,0);
     Windmill_Blade();
     glPopMatrix();
 
@@ -669,6 +785,8 @@ void Windmill(){
 
 
 }
+
+
 
 
 ///Model_End
@@ -679,11 +797,14 @@ void Windmill(){
 ///***   Object  ***///
 ///=================///
 
-///*** Sun ***///
-void Sun(){
+///*** ufo ***///
+
+
+
+void ufo(){
     glColor3f(1, 1, 0);
     glPushMatrix();
-    Moving_Sun_Model();
+    Moving_ufo_Model();
     glPopMatrix();
 }
 ///*** Cloud_One_Model_One ***///
@@ -739,7 +860,6 @@ void cloud_six(){
     cloud_model_Three();
     glPopMatrix();
 }
-
 ///*** House_One ***///
 void house_one(){
     glPushMatrix();
@@ -943,7 +1063,7 @@ void Windmill_One(){
 void Windmill_Two(){
     glColor3f(0.11, 0.23, 0.36);
     glPushMatrix();
-    glTranslatef(508,-70,0);
+    glTranslatef(200,-70,0);
     Windmill();
     glPopMatrix();
 
@@ -970,7 +1090,7 @@ void display(void)
 	glColor3f(0.0, 0.0, 1.0);
 
     ///*** Object_Layer ***///
-    Sun();
+    ufo();
 
     Windmill_Three();
 
@@ -995,7 +1115,7 @@ void display(void)
 
 
     house_one();
-    cloud_one();
+   // cloud_one();
     house_two();
 
 
@@ -1016,7 +1136,7 @@ void display(void)
 
     cloud_two();
     cloud_five();
-    cloud_six();
+   // cloud_six();
     field();
 
 	glFlush();
@@ -1025,14 +1145,14 @@ void display(void)
 ///*** Speed & Movement ***///
 ///========================///
 ///*** Sun_Move ***///
-void sun_move(){
+void ufo_move(){
 
-    sun_spin = sun_spin + 0.0008;
+    ufo_spin = ufo_spin - 0.008;
 
 }
 void move_right(){
 
-    sun_move();
+    ufo_move();
 
     spin = spin +.1;
     ax = ax + .05;
@@ -1088,8 +1208,8 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(50, 50);
-	glutInitWindowSize(1900, 1900);
-	glutCreateWindow("Smart Village");
+	glutInitWindowSize(1000, 600);
+	glutCreateWindow("The uncertain miracle");
 	init();
 	glutDisplayFunc(display);
     glutMouseFunc(mouse);
