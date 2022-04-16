@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include<stdio.h>
 #define PI 3.1416
+//checkgit
 
 GLint i, j, k;
 GLfloat ufo_spin=0, ufo_x=900, ufo_y=900;
