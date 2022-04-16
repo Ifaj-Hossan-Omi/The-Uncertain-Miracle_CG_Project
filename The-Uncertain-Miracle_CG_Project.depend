@@ -900,3 +900,11 @@
 
 1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\_mingw_print_pop.h
 
+1650090945 source:e:\onedrive - american international university-bangladesh\study\7th semester\present\computer graphics\project 2\the-uncertain-miracle_cg_project\main.cpp
+	<windows.h>
+	<GL\glut.h>
+	<GL/glu.h>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
